@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <label>方法名稱</label>
+    <input id="input1">
+    <br/>
+    <label>方法物件</label>
+    <input id="input2">
+    <button id="btn1">BTN</button>
+    <br/>
+    <p id="p1"></p>
+
+</head>
+<body>
+    <script>
+
+    
+
+        let input1=document.getElementById('input1');
+        let btn1=document.getElementById('btn1');
+        let p1=document.getElementById('p1');
+
+        btn1.addEventListener('click',function(){
+
+            let originObj={};
+            originObj.Method=input1.value;
+            originObj.Params=JSON.parse(input2.value);      
+
+            let ouputObj={};
+            ouputObj.szInData=JSON.stringify(originObj);
+            p1.innerHTML=JSON.stringify(ouputObj);
+        })
+
+    </script>
+</body>
+</html>
